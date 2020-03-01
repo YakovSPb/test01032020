@@ -1,0 +1,339 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+textarea:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+input:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+
+
+body
+	font-size: 0.9em
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Roboto', sans-serif
+	overflow-x: hidden
+	color: $text
+
+.main
+	max-width: 960px
+	padding: 10px
+	margin:
+		left: auto
+		right: auto
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+// HEADER
+.header
+	height: 240px
+	border: 1px solid #000
+	background-color: #e6e6e6
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	+media-breakpoint-down(sm)
+		height: auto
+.user-foto
+	width: 25%
+	height: 100%
+	position: relative
+	+media-breakpoint-down(sm)
+		width: 100%
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.user-info
+	display: flex
+	flex-direction: column
+	padding-left: 30px
+	padding-bottom: 20px
+	width: 100%
+	max-width: 460px
+
+
+// ICONS EDITE/CLOSE
+.input-icons
+	display: none
+.input-active
+	input
+		background-color: #fff
+	.input-icons
+		display: block
+		.input-icons_edite
+			position: absolute
+			top: 24px
+			right: 38px
+		.input-icons_close
+			position: absolute
+			top: 24px
+			right: 7px
+		span
+			width: 24px
+			height: 24px
+			background-color: #e6e6e6
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 100%
+			cursor: pointer
+			transition: background-color.3s ease
+			&:hover
+				background-color: #5C5C5C
+			.fa
+				color: #fff
+
+// INPUTS
+input
+	border: 1px solid transparent
+	padding-left: 5px
+	width: 100
+	background: #e6e6e6
+	width: 100%
+	cursor: pointer
+	&:hover
+		border: 1px solid #bababa
+
+.user-name
+	position: relative
+
+#user-name
+	line-height: 1.2
+	font-size: 2.1em
+	margin-top: 15px
+	font-weight: 500
+	width: 100%
+	max-width: 460px
+
+.user-country, .user-lang
+	position: relative
+	.input-icons_edite
+		width: 18px!important
+		height: 18px!important
+		top: 6px!important
+		right: 32px!important
+		.fa
+			font-size: 10px
+	.input-icons_close
+		width: 18px!important
+		height: 18px!important
+		top: 6px!important
+		.fa
+			font-size: 10px
+#user-country
+	font-weight: 600
+	color: $text
+
+
+#user-lang
+	font-weight: 600
+	color: $text
+
+#user-skills
+	margin-top: 15px
+	margin-bottom: 10px
+	height: auto
+	max-height: 67px
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+	overflow-y: hidden
+	.gray
+		background-color: gray!important
+	.lightgray
+		background-color: lightgray!important
+	.user-item
+		color: #fff
+		background: #000
+		margin-right: 6px
+		text-transform: uppercase
+		padding: 0 8px
+		border-radius: 2px
+		margin-bottom: 10px	
+		position: relative
+		&:hover
+			.user-skills_close
+				display: inline-flex
+.user-skills_close
+	background-color: #fa6e6a
+	width: 16px
+	height: 16px
+	border-radius: 10em
+	display: none
+	justify-content: center
+	align-items: center
+	position: absolute
+	top: 3px
+	right: 3px
+	cursor: pointer
+
+.user-addskills
+	display: flex
+	position: relative
+	max-width: 255px
+	width: 100%
+
+
+.user-addskills .input-icons_close
+	top: 4px!important
+	width: 20px!important
+	height: 20px!important
+.user-addskills.input-active
+	.selectize-control.single .selectize-input, .selectize-control.single .selectize-input input
+		visibility: visible!important
+#select-skills
+	position: absolute
+	top: 0
+	right: 0
+	font-size: .8em
+	height: 100%
+.user-btn_pring
+	position: absolute
+	top: 20px
+	right: 30px
+	.print-doc
+		font-size: 1.1em
+		color: #fff
+		background: #000
+		border-radius: 20px
+		text-transform: uppercase
+		padding: 3px 10px
+		&:hover
+			text-decoration: none
+
+
+// CONTENT
+.content
+	display: flex
+	flex-wrap: wrap
+	.item
+		width: 25%
+		border: 1px solid #e6e6e6
+		height: 250px
+		position: relative
+		+media-breakpoint-down(md)
+			width: 50%
+		+media-breakpoint-down(xs)
+			width: 100%
+	.item-head
+		padding: 20px 20px 0 20px
+		height: 70px
+		text-align: center
+	.item-title
+		max-width: 140px
+		margin: 0 auto
+		line-height: 1.2
+		font-weight: 600
+	#item-list
+		margin-top: 5px
+		padding-left: 30px
+	.item-img_code
+		width: 100%
+		height: 178px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: left top
+
+.item-hf
+	padding: 0!important
+.item-half
+	height: 50%
+	border-bottom: 1px solid #e6e6e6
+.item-half_title
+	padding-top: 20px
+	text-align: center
+	font-weight: 600
+.item-half_full
+	font-size: 2em
+	padding-top: 10px
+	font-weight: 600
+	text-align: center
+.item-half_info
+	padding-top: 15px
+	text-align: center
+	line-height: 1
+	max-width: 200px
+	margin: 0 auto
+
+.item-quote
+	position: relative
+	height: 130px
+	&:before
+		content: '🙶'
+		position: absolute
+		width: 50px
+		height: 50px
+		left: 15px
+		top: -40px
+		font-size: 5em
+		opacity: .1
+	&:after
+		content: '🙶'
+		position: absolute
+		width: 50px
+		height: 50px
+		transform: scale(-1, -1)
+		right: 15px
+		bottom: -69px
+		font-size: 5em
+		opacity: .1
+.item-quote-content
+	padding: 0 20px
+	font-size: 0.9em
+	font-style: italic
+
+.item-quote-sing
+	float: right
+	padding-right: 20px
+	font-weight: 600
+
+
+// SELCTIZE
+.selectize-control.single .selectize-input, .selectize-control.single .selectize-input input
+	width: 80px
+	border-radius: 6px
+	background-color: #e6e6e6
+	padding: 2px 8px
+	visibility: hidden
+.selectize-control.single .selectize-input::after
+	border: 0
+	font-family: FontAwesome
+	content: '\f0dc'
+	margin-top: -7px!important
+.selectize-control
+	position: absolute
+	top: 2px
+	right: 40px
