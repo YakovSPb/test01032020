@@ -116,6 +116,8 @@ skillsInput.onfocus = function() {
 $(skillsInput).keyup(function(event){
 	if(event.keyCode == 13){
 		checkTab()
+		findMatch = false
+		console.log(findMatch)
 	}
 })
 
@@ -123,6 +125,8 @@ $(skillsInput).keyup(function(event){
 
 editeSkills.addEventListener('click', function() {
 	checkTab()
+	findMatch = false
+	console.log(findMatch)
 })
 
 
